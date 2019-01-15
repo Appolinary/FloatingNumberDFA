@@ -73,18 +73,14 @@ public class FloatingNumberDFA {
             //get the encoding of the symbol first
             int encodedSymbol = encode(symbols[i]);
 
-            //if the symbol is not in the alphabet then dont bother looking
-            if (encodedSymbol == NOT_IN_ALPHABET) {
+            //if the symbol is not in the alphabet or the current state is a terminating state then dont bother looking
+            if (encodedSymbol == NOT_IN_ALPHABET || currentState == TERMINATING_STATE) {
                 return false;
             }
 
-            //othewise use the transition table to move to the next state
+            //otherwise use the transition table to move to the next state
             currentState = T[currentState][encodedSymbol];
 
-            //If the current state is a terminating state, then return false right away
-            if (currentState == TERMINATING_STATE) {
-                return false;
-            }
         }
 
         return isAcceptingState(currentState);
