@@ -5,7 +5,7 @@ package floatingnumberdfa;
  *
  * @author fabrice.appolinary
  * 
- * The DFA can recognise the following numbers as a strings:
+ * The DFA can recognise the following strings as numbers:
  * 
  * 33
  * +3.0
