@@ -111,7 +111,7 @@ public class FloatingNumberDFA {
             return 3;
         }
 
-        return -1;
+        return NOT_IN_ALPHABET;
     }
 
     /*A routine to check if a state is an accept state or not
